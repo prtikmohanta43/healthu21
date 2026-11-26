@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Remedium Health: search conditions, get care</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><div class="wrap">
+  <a href="#top" class="logo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#7db4ff"/><path d="M12 6v12M6 12h12" stroke="#07356f" stroke-width="3" stroke-linecap="round"/></svg>Remedium Health</a>
+  <div class="hnav"><a href="#results">Conditions</a><a href="#doctor">Find a doctor</a><button id="themeBtn" class="tbtn" type="button">Dark mode</button><a class="sos" href="tel:112">Emergency: 112</a></div>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap hgrid"><div>
+  <h1>Search a health problem. Know <span class="mk">what to do next.</span></h1>
+  <p class="muted">Free, basic information on common conditions, plus clear guidance on serious ones and how to reach a doctor.</p>
+  <div class="emerg" role="note"><b>In an emergency, don’t search. Call 112 (national emergency) or 108 (ambulance in most states).</b> Chest pain, trouble breathing, stroke signs, heavy bleeding, fits, or someone unresponsive all need help right now.</div>
+  <form class="search" role="search" onsubmit="document.getElementById('results').scrollIntoView();return false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" type="search" placeholder="Search a condition or symptom, e.g. fever, chest pain, dengue" aria-label="Search conditions or symptoms" autocomplete="off"><button class="btn" type="submit">Search</button></form>
+  <div class="try">Try: <button type="button" onclick="var q=document.getElementById('q');q.value='fever';q.dispatchEvent(new Event('input'))">fever</button><button type="button" onclick="var q=document.getElementById('q');q.value='chest pain';q.dispatchEvent(new Event('input'))">chest pain</button><button type="button" onclick="var q=document.getElementById('q');q.value='dengue';q.dispatchEvent(new Event('input'))">dengue</button><button type="button" onclick="var q=document.getElementById('q');q.value='diabetes';q.dispatchEvent(new Event('input'))">diabetes</button></div>
+  <div class="chips" id="chips" role="group" aria-label="Filter"></div>
+</div>
+<svg viewBox="0 0 400 300" aria-hidden="true"><circle cx="215" cy="150" r="125" fill="#1d5bb5" opacity=".55"/><rect x="80" y="45" width="250" height="160" rx="12" fill="#fff"/><rect x="80" y="45" width="250" height="26" rx="12" fill="#cfe0fb"/><polyline points="100,140 150,140 165,100 185,170 205,120 220,140 310,140" fill="none" stroke="#2f7ff0" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><rect x="100" y="175" width="90" height="12" rx="6" fill="#7db4ff"/><rect x="150" y="205" width="30" height="40" fill="#cfe0fb"/><rect x="120" y="245" width="90" height="10" rx="5" fill="#cfe0fb"/><circle cx="60" cy="150" r="20" fill="#f2b8a2"/><rect x="38" y="172" width="44" height="84" rx="20" fill="#7db4ff"/><circle cx="350" cy="140" r="20" fill="#f2b8a2"/><rect x="328" y="162" width="44" height="94" rx="20" fill="#2f7ff0"/></svg>
+</div></div>
+
+<section class="band" id="results"><div class="wrap">
+  <h2><span class="mk">Conditions A to Z</span></h2>
+  <p class="note" id="count" role="status"></p>
+  <div class="list" id="list"></div>
+</div></section>
+
+<section class="band soft"><div class="wrap split">
+  <div>
+    <h2><span class="mk">Serious symptoms?</span> Act fast.</h2>
+    <p class="muted">Chest pain, stroke signs, severe breathing trouble, heavy bleeding or a fit need help now. Don’t wait to see if it passes.</p>
+    <a class="btn" href="tel:112">Call 112</a><a class="btn alt" href="tel:108">Ambulance 108</a>
+  </div>
+  <svg viewBox="0 0 400 280" aria-hidden="true"><circle cx="200" cy="140" r="120" fill="#fff"/><rect x="168" y="70" width="64" height="140" rx="10" fill="#d33b43"/><rect x="130" y="108" width="140" height="64" rx="10" fill="#d33b43"/><circle cx="320" cy="60" r="26" fill="#7db4ff"/><circle cx="80" cy="220" r="18" fill="#2f7ff0"/></svg>
+</div></section>
+
+<section class="band"><div class="wrap" style="text-align:center">
+  <h2><span class="mk">How it works</span></h2>
+  <div class="steps">
+    <div class="step"><i>1</i><h3>Search</h3><p class="muted">Type a condition or symptom.</p></div>
+    <div class="step"><i>2</i><h3>Understand</h3><p class="muted">Read the basics and the warning signs.</p></div>
+    <div class="step"><i>3</i><h3>Get care</h3><p class="muted">Find the right doctor, or call for help.</p></div>
+  </div>
+</div></section>
+
+<section class="doc" id="doctor"><div class="wrap">
+  <h2>Finding the right doctor</h2>
+  <p>Remedium doesn’t rank or recommend named doctors. We can’t verify anyone’s results, and “top doctor” lists are often paid. Use these instead:</p>
+  <ul>
+    <li><b>Check registration.</b> Look the doctor up in the <a href="https://www.nmc.org.in" target="_blank" rel="noopener">National Medical Commission</a> register or your state medical council.</li>
+    <li><b>Book a free tele-consult</b> with a government doctor on <a href="https://esanjeevani.mohfw.gov.in" target="_blank" rel="noopener">eSanjeevani</a>.</li>
+    <li><b>Choose the right specialist</b> using the table below, and get a second opinion before any major surgery or cancer treatment.</li>
+    <li><b>Ask about cost.</b> Check if you qualify for schemes such as Ayushman Bharat before choosing a hospital.</li>
+  </ul>
+  <div class="tw"><table>
+    <tr><th>Problem</th><th>See</th></tr>
+    <tr><td>Heart, chest pain, high blood pressure</td><td>Cardiologist</td></tr>
+    <tr><td>Stroke, fits, severe headache</td><td>Neurologist</td></tr>
+    <tr><td>Diabetes, thyroid</td><td>Endocrinologist or physician</td></tr>
+    <tr><td>Lung problems, TB, asthma</td><td>Pulmonologist</td></tr>
+    <tr><td>Lumps, unexplained weight loss, long-term bleeding</td><td>Oncologist (after a physician or surgeon)</td></tr>
+    <tr><td>Fever, infections, general illness</td><td>General physician</td></tr>
+    <tr><td>Stomach, liver, bowel</td><td>Gastroenterologist</td></tr>
+    <tr><td>Kidney, urine problems</td><td>Nephrologist or urologist</td></tr>
+  </table></div>
+  <p class="note">If you run a clinic or hospital and want to be listed, we can add a verified directory with registration numbers shown.</p>
+</div></section>
+<section class="band" style="text-align:center"><div class="wrap">
+  <h2><span class="mk">Official health resources</span></h2>
+  <div class="res"><a href="https://www.mohfw.gov.in" target="_blank" rel="noopener">Ministry of Health (MoHFW)</a><a href="https://www.nmc.org.in" target="_blank" rel="noopener">National Medical Commission</a><a href="https://esanjeevani.mohfw.gov.in" target="_blank" rel="noopener">eSanjeevani</a></div>
+</div></section>
+<section class="cta"><div class="wrap">
+  <h2>Not sure what you have?</h2>
+  <p>Talk to a registered doctor online for free through the government’s eSanjeevani service.</p>
+  <a class="btn alt" href="https://esanjeevani.mohfw.gov.in" target="_blank" rel="noopener">Book a free tele-consult</a>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <p>This site gives general information only. It is not medical advice, a diagnosis, or a substitute for a doctor. Don’t delay care because of something you read here. For emergencies call 112 or 108.</p>
+  <p>© <span id="year">2026</span> Remedium. All rights reserved.</p>
+  <p class="credit">Made by Kumresh Mohanta</p>
+</div></footer>
+<a class="totop" href="#top" aria-label="Back to top">↑</a>
+
+<script src="script.js" defer></script>
+</body>
+</html>
